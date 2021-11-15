@@ -17,18 +17,19 @@ class ViewController: UIViewController {
     self.makeRequestWithOutSSLPinning()
   }
   @IBAction func makeAHTTPRequestWithCertificate(_ sender: UIButton) {
-    
+    self.makeRequestWithSSLPinning()
   }
   
+  /// make a HTTP request without SSL Certificate
   private func makeRequestWithOutSSLPinning(){
     
-    let url = URL(string: "https://run.mocky.io/v3/a4fe6e4c-dca1-4bc6-98e6-a2d9d6fef652")!
-    let session = URLSession.shared
+    let url = AppConstants.url
+    let session = AppConstants.unsecure_session
     let task = session.dataTask(with: url, completionHandler: { data, response, error in
       if let data = data {
         
         do {
-          let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+          let json = try JSONSerialization.jsonObject(with: data, options: [])
           print(json)
           print("---- received data in without SSL Certificate---")
         } catch {
@@ -40,6 +41,31 @@ class ViewController: UIViewController {
       }
     })
     task.resume()
+  }
+  
+  
+  /// make a HTTP request with SSL Certificate
+  /// to see the effects turn on the MITM say charls proxy and app will cancels the request
+  private func makeRequestWithSSLPinning(){
+    
+    let url = AppConstants.url
+    let session = AppConstants.secure_session
+    let task = session?.dataTask(with: url, completionHandler: { data, response, error in
+      if let data = data {
+        
+        do {
+          let json = try JSONSerialization.jsonObject(with: data, options: [])
+          print(json)
+          print("---- received data in with SSL Certificate---")
+        } catch {
+          print(error)
+        }
+      } else if let error = error {
+        print(error.localizedDescription as Any)
+        print("---- received error in with SSL Certificate---")
+      }
+    })
+    task?.resume()
   }
 }
 
