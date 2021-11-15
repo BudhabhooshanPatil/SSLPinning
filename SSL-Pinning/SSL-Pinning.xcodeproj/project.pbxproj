@@ -13,6 +13,7 @@
 		6E290987274254D300608BED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E290985274254D300608BED /* Main.storyboard */; };
 		6E290989274254D500608BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E290988274254D500608BED /* Assets.xcassets */; };
 		6E29098C274254D500608BED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E29098A274254D500608BED /* LaunchScreen.storyboard */; };
+		6E2909942742553B00608BED /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2909932742553B00608BED /* RequestManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		6E290988274254D500608BED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E29098B274254D500608BED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E29098D274254D500608BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E2909932742553B00608BED /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				6E290988274254D500608BED /* Assets.xcassets */,
 				6E29098A274254D500608BED /* LaunchScreen.storyboard */,
 				6E29098D274254D500608BED /* Info.plist */,
+				6E2909932742553B00608BED /* RequestManager.swift */,
 			);
 			path = "SSL-Pinning";
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 				6E290984274254D300608BED /* ViewController.swift in Sources */,
 				6E290980274254D300608BED /* AppDelegate.swift in Sources */,
 				6E290982274254D300608BED /* SceneDelegate.swift in Sources */,
+				6E2909942742553B00608BED /* RequestManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
